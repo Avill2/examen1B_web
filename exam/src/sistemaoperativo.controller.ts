@@ -1,5 +1,7 @@
-import {Controller, Get, HttpCode, Post, ReflectMetadata, Req, Res} from '@nestjs/common';
+import {Body, Controller, Get, HttpCode, Post, ReflectMetadata, Req, Res} from '@nestjs/common';
 import {SistemaoperativoService} from './sistemaoperativo.service';
+import {SistemaoperativoPipe} from './SIstemaOperativoPipe/sistemaoperativo.pipe';
+import {SISTEMAOPERATIVO_SCHEMA} from './SistemaOperativo/sistemaoperativo.schema';
 
 @Controller()
 export class SistemaoperativoController {
@@ -39,12 +41,12 @@ export class SistemaoperativoController {
    // @ReflectMetadata('permisos', ['privado'])
 
     crearSO(
-        @Body(new UsuarioPipe(USUARIO_SCHEMA))
-            nuevoUsuario
+        @Body(new SistemaoperativoPipe(SISTEMAOPERATIVO_SCHEMA))
+            nuevoSO
     ) {
 
-        const usuarioCreado = this._usuarioService.crearUsuario(nuevoUsuario);
-        return nuevoUsuario;
+        const SOCreado = this._sistemaoperativoservice.crearSO(nuevoSO);
+        return nuevoSO;
    }
 
 
