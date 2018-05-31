@@ -27,16 +27,6 @@ export class SistemaoperativoController {
         return response.send(sistemas_operativos);
     }
 
- //   @Get('mostrarExpress')
- //   mostrarUsuarioExpress(
- //       @Req() request,
-  //      @Res() response
-   // ) {
-  //      return response
- //           .status(200)
-  //          .send(this.usuarios);
-   // }
-
    @Post('crearSO')
    // @ReflectMetadata('permisos', ['privado'])
 

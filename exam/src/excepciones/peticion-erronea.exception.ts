@@ -2,6 +2,7 @@ import {HttpException, HttpStatus} from "@nestjs/common";
 
 
 export class PeticionErroneaException extends HttpException {
+
     constructor(private readonly _mensaje,
                 private readonly _nivelError) {
         super({
