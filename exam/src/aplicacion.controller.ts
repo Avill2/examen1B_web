@@ -1,4 +1,4 @@
-import {Body, Controller, Get, HttpCode, Post, Res} from '@nestjs/common';
+import {Body, Controller, Get, HttpCode, Param, Post, Put, Req, Res} from '@nestjs/common';
 import {AplicacionesServices} from './aplicaciones.services';
 import {AplicacacionPipe} from './AplicacionPipe/aplicacacion.pipe';
 import {APLICACION_SCHEMA} from './Aplicacion/aplicacion.schema';
@@ -26,9 +26,20 @@ export class AplicacionController {
 
     @Post('crearApp') crearAPP(@Body(new AplicacacionPipe(APLICACION_SCHEMA))
     nuevoapp){
-        const appNuevo =this._aplicacionesservices.crear_app(nuevoapp)
+        const appNuevo =this._aplicacionesservices.crear_app(nuevoapp);
         return nuevoapp;
     }
 
+    @Get(':nombre')
+    obtenerUno(@Param(APLICACION_SCHEMA.nombre) nombre, @Req() request,
+               @Res() response) {
+        return response.send(nombre);
+    }
+
+    @Put(':nombre')
+    editarUno(@Param(APLICACION_SCHEMA.nombre) nombre, @Body(new AplicacacionPipe(APLICACION_SCHEMA)) updateApp, @Req() request,
+              @Res() response) {
+        return response.send(updateApp);
+    }
 
 }
