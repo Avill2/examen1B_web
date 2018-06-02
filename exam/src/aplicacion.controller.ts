@@ -31,15 +31,18 @@ export class AplicacionController {
     }
 
     @Get(':nombre')
-    obtenerUno(@Param(APLICACION_SCHEMA.nombre) nombre, @Req() request,
+    obtenerUno(@Param(APLICACION_SCHEMA.nombre) nombreApp, @Req() request,
                @Res() response) {
-        return response.send(nombre);
+        const app = this._aplicacionesservices.mostrar_app();
+        return response.send(app);
+
     }
 
     @Put(':nombre')
     editarUno(@Param(APLICACION_SCHEMA.nombre) nombre, @Body(new AplicacacionPipe(APLICACION_SCHEMA)) updateApp, @Req() request,
               @Res() response) {
-        return response.send(updateApp);
+        const updateAplica =this._aplicacionesservices.actualizar_app(updateApp);
+        return updateApp;
     }
 
 }

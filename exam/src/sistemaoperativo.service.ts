@@ -1,4 +1,5 @@
 import {Injectable} from '@nestjs/common';
+import {Aplicaciones} from './aplicaciones.services';
 
 @Injectable()
 export class SistemaoperativoService {
@@ -12,6 +13,11 @@ export class SistemaoperativoService {
     mostrarSO(): SistemasOperativos[] {
         return this.sistemas_operativos;
     }
+    actualizar_SO(SO:SistemasOperativos): SistemasOperativos{
+        this.sistemas_operativos.pop();
+        this.sistemas_operativos.push(SO);
+        return SO;
+    }
 }
 export interface SistemasOperativos {
     nombre: string,
@@ -20,3 +26,4 @@ export interface SistemasOperativos {
     pesoEnGigas: number,
     instalado: boolean,
 }
+

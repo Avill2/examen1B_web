@@ -13,6 +13,14 @@ export class AplicacionesServices{
     mostrar_app():Aplicaciones []{
         return this.aplicacion;
     }
+    actualizar_app(App:Aplicaciones): Aplicaciones{
+        this.aplicacion.pop();
+        this.aplicacion.push(App);
+        return App;
+    }
+
+
+
 }
 export interface Aplicaciones {
     pesoEnGigas:number,
