@@ -48,10 +48,10 @@ export class SistemaoperativoController {
 
     }
     @Put(':nombre')
-    editarUno(@Param(SISTEMAOPERATIVO_SCHEMA.nombre) nombre, @Body(new AplicacacionPipe(SISTEMAOPERATIVO_SCHEMA)) updateApp, @Req() request,
+    updateUno(@Param(SISTEMAOPERATIVO_SCHEMA.nombre) nombre, @Body(new SistemaoperativoPipe(SISTEMAOPERATIVO_SCHEMA)) updateSO, @Req() request,
               @Res() response) {
-        const updateAplica =this._sistemaoperativoservice.actualizar_SO(updateApp);
-        return updateApp;
+        const updateSistemaOperativo =this._sistemaoperativoservice.actualizar_SO(updateSO);
+        return updateSO;
     }
 
 

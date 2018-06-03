@@ -30,7 +30,7 @@ export class AplicacionController {
         return nuevoapp;
     }
 
-    @Get(':nombre')
+    @Get(':sistemaOperativoId')
     obtenerUno(@Param(APLICACION_SCHEMA.nombre) nombreApp, @Req() request,
                @Res() response) {
         const app = this._aplicacionesservices.mostrar_app();
@@ -38,7 +38,7 @@ export class AplicacionController {
 
     }
 
-    @Put(':nombre')
+    @Put(':sistemaOperativoId')
     editarUno(@Param(APLICACION_SCHEMA.nombre) nombre, @Body(new AplicacacionPipe(APLICACION_SCHEMA)) updateApp, @Req() request,
               @Res() response) {
         const updateAplica =this._aplicacionesservices.actualizar_app(updateApp);
