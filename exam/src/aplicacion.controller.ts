@@ -1,4 +1,4 @@
-import {Body, Controller, Get, HttpCode, Param, Post, Put, Req, Res} from '@nestjs/common';
+import {Body, Controller, Get, HttpCode, Param, Post, Put, Req, Res, UsePipes} from '@nestjs/common';
 import {AplicacionesServices} from './aplicaciones.services';
 import {AplicacacionPipe} from './AplicacionPipe/aplicacacion.pipe';
 import {APLICACION_SCHEMA} from './Aplicacion/aplicacion.schema';
@@ -24,6 +24,7 @@ export class AplicacionController {
             return response.send(app);
         }
 
+        @UsePipes(new AplicacacionPipe(APLICACION_SCHEMA))
     @Post('crearApp') crearAPP(@Body(new AplicacacionPipe(APLICACION_SCHEMA))
     nuevoapp){
         const appNuevo =this._aplicacionesservices.crear_app(nuevoapp);

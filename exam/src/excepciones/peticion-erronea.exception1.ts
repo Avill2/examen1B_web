@@ -7,7 +7,7 @@ export class PeticionErroneaException1 extends HttpException {
                 private readonly _nivelError) {
         super({
             mensaje: 'Peticion erronea',
-            statusCode: HttpStatus.BAD_REQUEST,
+            statusCode: HttpStatus.NOT_FOUND,
             nivelError: _nivelError,
             detalle: _mensaje
         }, HttpStatus.NOT_FOUND);

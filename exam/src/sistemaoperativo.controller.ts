@@ -1,4 +1,4 @@
-import {Body, Controller, Get, HttpCode, Param, Post, Put, ReflectMetadata, Req, Res} from '@nestjs/common';
+import {Body, Controller, Get, HttpCode, Param, Post, Put, ReflectMetadata, Req, Res, UsePipes} from '@nestjs/common';
 import {SistemaoperativoService} from './sistemaoperativo.service';
 import {SistemaoperativoPipe} from './SIstemaOperativoPipe/sistemaoperativo.pipe';
 import {SISTEMAOPERATIVO_SCHEMA} from './SistemaOperativo/sistemaoperativo.schema';
@@ -28,10 +28,9 @@ export class SistemaoperativoController {
         const sistemas_operativos = this._sistemaoperativoservice.mostrarSO();
         return response.send(sistemas_operativos);
     }
-
-   @Post('crearSO')
+    @UsePipes(new SistemaoperativoPipe(SISTEMAOPERATIVO_SCHEMA))
+    @Post('crearSO')
    // @ReflectMetadata('permisos', ['privado'])
-
     crearSO(
         @Body(new SistemaoperativoPipe(SISTEMAOPERATIVO_SCHEMA))
             nuevoSO
