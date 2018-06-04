@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60269aa7-637c-4a7b-8c5f-3b8e79560951" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/exam/src/aplicacion.controller.ts" afterPath="$PROJECT_DIR$/exam/src/aplicacion.controller.ts" />
       <change beforePath="$PROJECT_DIR$/exam/src/autorizacion.controller.ts" afterPath="$PROJECT_DIR$/exam/src/autorizacion.controller.ts" />
-      <change beforePath="$PROJECT_DIR$/exam/src/excepciones/peticion-erronea.exception.ts" afterPath="$PROJECT_DIR$/exam/src/excepciones/peticion-erronea.exception.ts" />
-      <change beforePath="$PROJECT_DIR$/exam/src/excepciones/peticion-erronea.exception1.ts" afterPath="$PROJECT_DIR$/exam/src/excepciones/peticion-erronea.exception1.ts" />
-      <change beforePath="$PROJECT_DIR$/exam/src/sistemaoperativo.controller.ts" afterPath="$PROJECT_DIR$/exam/src/sistemaoperativo.controller.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,10 +31,10 @@
       <file leaf-file-name="autorizacion.controller.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exam/src/autorizacion.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="370">
+              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#0#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,11 +63,11 @@
         <option value="$PROJECT_DIR$/exam/src/aplicaciones.services.ts" />
         <option value="$PROJECT_DIR$/exam/src/sistemaoperativo.service.ts" />
         <option value="$PROJECT_DIR$/exam/src/SistemaOperativo/sistemaoperativo.schema.ts" />
-        <option value="$PROJECT_DIR$/exam/src/autorizacion.controller.ts" />
         <option value="$PROJECT_DIR$/exam/src/excepciones/peticion-erronea.exception.ts" />
         <option value="$PROJECT_DIR$/exam/src/excepciones/peticion-erronea.exception1.ts" />
         <option value="$PROJECT_DIR$/exam/src/sistemaoperativo.controller.ts" />
         <option value="$PROJECT_DIR$/exam/src/aplicacion.controller.ts" />
+        <option value="$PROJECT_DIR$/exam/src/autorizacion.controller.ts" />
       </list>
     </option>
   </component>
@@ -84,7 +80,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/exam/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -166,7 +162,7 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../03-Nestjs" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
@@ -206,15 +202,15 @@
       <workItem from="1527783514132" duration="3731000" />
       <workItem from="1527787272035" duration="1652000" />
       <workItem from="1527881327194" duration="9590000" />
-      <workItem from="1528060587512" duration="8419000" />
+      <workItem from="1528060587512" duration="9833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28608000" />
+    <option name="totallyTimeSpent" value="30022000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -281,7 +277,7 @@
         <state relative-caret-position="111">
           <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -399,7 +395,7 @@
         <state relative-caret-position="666">
           <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -482,7 +478,7 @@
         <state relative-caret-position="337">
           <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,10 +543,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/exam/src/autorizacion.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="370">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
