@@ -7,7 +7,7 @@ export class AplicacionesServices{
 
     crear_app(App:Aplicaciones): Aplicaciones{
         this.aplicacion.push(App);
-        return App
+        return App;
     }
 
     mostrar_app():Aplicaciones []{
@@ -19,6 +19,20 @@ export class AplicacionesServices{
         return App;
     }
 
+    otbtenerUno(id){
+        return this.aplicacion[id-1];
+    }
+
+    editarUno(id,pesoEnGigas, version, nombre,urlDescarga,fechaLanzamiento,costo){
+        let arregloaux= this.otbtenerUno(id);
+        arregloaux.pesoEnGigas=pesoEnGigas;
+        arregloaux.version=version;
+        arregloaux.nombre=nombre;
+        arregloaux.urlDescarga=urlDescarga;
+        arregloaux.fechaLanzamiento=fechaLanzamiento;
+        arregloaux.costo=costo;
+        return arregloaux;
+    };
 
 
 }
