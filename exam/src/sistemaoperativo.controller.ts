@@ -4,8 +4,10 @@ import {SistemaoperativoPipe} from './SIstemaOperativoPipe/sistemaoperativo.pipe
 import {SISTEMAOPERATIVO_SCHEMA} from './SistemaOperativo/sistemaoperativo.schema';
 import {APLICACION_SCHEMA} from './Aplicacion/aplicacion.schema';
 import {AplicacacionPipe} from './AplicacionPipe/aplicacacion.pipe';
+import {PeticionErroneaException1} from './excepciones/peticion-erronea.exception1';
+import {error} from 'util';
 
-@Controller()
+@Controller('SistemaOperativo')
 export class SistemaoperativoController {
     sistema_operativo = {
         nombre: String,
@@ -21,7 +23,7 @@ export class SistemaoperativoController {
     }
 
     @HttpCode(202)
-    @Get('SistemaOperativo')
+    @Get('listaSO')
     mostrarSO(
         @Res() response
     ) {
@@ -35,25 +37,39 @@ export class SistemaoperativoController {
         @Body(new SistemaoperativoPipe(SISTEMAOPERATIVO_SCHEMA))
             nuevoSO
     ) {
-
         const SOCreado = this._sistemaoperativoservice.crearSO(nuevoSO);
-        return nuevoSO;
+        if(SOCreado){
+            return nuevoSO;
+        }
+        else{
+            throw new PeticionErroneaException1(
+                'Peticion Invalidad, los datos ingresados no son suficientes',error()
+            )
+        }
    }
     @Get(':nombre')
-    obtenerUno(@Param(SISTEMAOPERATIVO_SCHEMA.nombre) nombreApp, @Req() request,
-               @Res() response) {
-        const app = this._sistemaoperativoservice.mostrarSO();
-        return response.send(app);
+    obtenerUno(@Param()id, @Req() request,@Res() response){
+        const sisO = this._sistemaoperativoservice.obtenerUno(id.id);
+        if (sisO){
+            return response.send(sisO);
+        }
+        else{
+            throw new PeticionErroneaException1('id no encontrado', error)
+        }
 
     }
-    @Put(':nombre')
-    updateUno(@Param(SISTEMAOPERATIVO_SCHEMA.nombre) nombre, @Body(new SistemaoperativoPipe(SISTEMAOPERATIVO_SCHEMA)) updateSO, @Req() request,
+
+    @Put(':id')
+    editarUno(@Param()id ,@Body() actualizaSO ,@Req() request,
               @Res() response) {
-        const updateSistemaOperativo =this._sistemaoperativoservice.actualizar_SO(updateSO);
-        return updateSO;
+        const updateSisO =this._sistemaoperativoservice.editarUno(id.id, actualizaSO.nombre, actualizaSO.versionApi, actualizaSO.fechaLanzamiento,actualizaSO.pesoEnGigas,actualizaSO.instalado);
+        if(updateSisO){
+            return response.send(updateSisO);
+        }else{
+            throw new PeticionErroneaException1('No se encuentra el ID', error)
+        }
+
     }
-
-
 
 }
 

@@ -18,6 +18,19 @@ export class SistemaoperativoService {
         this.sistemas_operativos.push(SO);
         return SO;
     }
+    obtenerUno(id){
+        return this.sistemas_operativos[id -1]
+    }
+
+    editarUno(id,nombre, versionApi, fechaLanzamiento, pesoEnGigas, instalado ){
+        let arregloauxSO = this.obtenerUno(id);
+        arregloauxSO.nombre=nombre;
+        arregloauxSO.versionApi=versionApi;
+        arregloauxSO.fechaLanzamiento=fechaLanzamiento;
+        arregloauxSO.pesoEnGigas=pesoEnGigas;
+        arregloauxSO.instalado=instalado;
+        return arregloauxSO;
+    }
 }
 export interface SistemasOperativos {
     nombre: string,
