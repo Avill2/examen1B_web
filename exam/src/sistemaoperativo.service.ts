@@ -33,6 +33,7 @@ export class SistemaoperativoService {
     }
 }
 export interface SistemasOperativos {
+    idSO:number,
     nombre: string,
     versionApi: number,
     fechaLanzamiento: Date,

@@ -47,7 +47,7 @@ export class SistemaoperativoController {
             )
         }
    }
-    @Get(':nombre')
+    @Get(':id')
     obtenerUno(@Param()id, @Req() request,@Res() response){
         const sisO = this._sistemaoperativoservice.obtenerUno(id.id);
         if (sisO){
@@ -68,9 +68,7 @@ export class SistemaoperativoController {
         }else{
             throw new PeticionErroneaException1('No se encuentra el ID', error)
         }
-
     }
-
 }
 
 

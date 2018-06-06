@@ -36,7 +36,7 @@ export class AplicacionController {
     @Get(':id')
     obtenerUno(@Param() id, @Req() request,
                @Res() response) {
-        const app = this._aplicacionesservices.otbtenerUno(id);
+        const app = this._aplicacionesservices.otbtenerUno(id.id);
         if (app) {
             return response.send(app);
         }else{
@@ -51,9 +51,9 @@ export class AplicacionController {
     @Put(':id')
     editarUno(@Param()id, @Body() updateApp, @Req() request,
               @Res() response) {
-        const updateAplica =this._aplicacionesservices.editarUno(id.id, updateApp.pesoEnGigas, updateApp.version, updateApp.nombre, updateApp.urlDescarga, updateApp.fechaLanzamiento, updateApp.costo);
-        if (updateApp){
-            return updateApp;
+        const updateAplica =this._aplicacionesservices.editarUno(id.id, updateApp.pesoEnGigas, updateApp.version, updateApp.nombre, updateApp.urlDescarga, updateApp.fechaLanzamiento, updateApp.costo, updateApp.sistemaOperativoId);
+        if (updateAplica){
+            return response.send(updateAplica);
         }else{
             throw new PeticionErroneaException(
                 'Id no encontrado', error()
